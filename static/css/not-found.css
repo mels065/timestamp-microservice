@@ -1,0 +1,19 @@
+body {
+  color: #2d2d2d;
+  font-family: 'Gothic A1', sans-serif;
+  text-align: center;
+  margin: 25px;
+}
+
+h1 {
+  color: #821d0b;
+  font-size: 3em;
+  margin-left: 35px;
+  text-decoration: underline;
+}
+
+p {
+  color: #2d2d2d;
+  font-size: 1.5em;
+  margin-left: 55px;
+}
