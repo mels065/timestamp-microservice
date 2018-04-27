@@ -1,0 +1,25 @@
+body {
+  font-family: 'Gothic A1', sans-serif;
+  margin: 25px;
+}
+
+h1 {
+  color: #4286f4;
+  margin-left: 35px;
+}
+
+.explanation {
+  margin-left: 55px;
+}
+
+.code {
+  background: #a5a5a5;
+  border: 2px solid #6d6d6d;
+  color: #821d0b;
+  font-family: 'Source Code Pro', monospace;
+}
+
+.code-block {
+  padding: 10px;
+  width: 300px;
+}

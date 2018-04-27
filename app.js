@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 require('dotenv').config();
 
 const jsonifyDateString = require('./helpers/jsonify-date-string');
@@ -10,26 +11,36 @@ port = process.env.NODE_ENV === 'testing' ?
 
 const app = express();
 
-app.set('view engine', 'pug')
+app.use(express.static(path.join(__dirname, 'static')));
+
+app.set('view engine', 'pug');
 app.set('views', 'templates');
 
 app.get('/', (req, res) => {
-  res.render('index');
+  res.render('index', { 
+    hostname: req.hostname,
+    protocol: req.protocol,
+    port: process.env.NODE_ENV === 'development' ?
+      port :
+      null,
+  });
 })
 
 app.get('/:timestamp', (req, res) => {
-  res.send(req.params.timestamp);
+  res.json({
+    unix: 'hello',
+    natural: 'world',
+  });
 });
 
 app.get('*', (req, res) => {
   res.status(404);
   res.render('not-found');
-})
+});
 
 const server = app.listen(
   port,
   () => console.log(`Server running on port ${port}`),
 );
 
-// For testing
 module.exports = server;
