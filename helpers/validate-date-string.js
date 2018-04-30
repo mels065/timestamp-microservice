@@ -1,23 +1,8 @@
 module.exports = (() => {
-  const MONTHS_AND_DAYS = {
-    "JANUARY":   31,
-    "FEBRUARY":  28,
-    "MARCH":     31,
-    "APRIL":     30,
-    "MAY":       31,
-    "JUNE":      30,
-    "JULY":      31,
-    "AUGUST":    31,
-    "SEPTEMBER": 30,
-    "OCTOBER":   31,
-    "NOVEMBER": 30,
-    "DECEMBER":  31,
-  }
-
-  const MONTHS = Object.keys(MONTHS_AND_DAYS);
-  const ABBR_MONTHS = MONTHS.map(month => month.slice(0, 3));
-
+  const { MONTHS_AND_DAYS, MONTHS, ABBR_MONTHS } = require('./constants');
   
+  const { capitalize } = require('./util');
+
   function isValidDate(month, day, year) {
     month = month.toUpperCase();
     if (MONTHS_AND_DAYS.hasOwnProperty(month) ||
@@ -65,10 +50,6 @@ module.exports = (() => {
 
   function formatDay(day) {
     return Number(day);
-  }
-
-  function capitalize(str) {
-    return `${str[0].toUpperCase()}${str.slice(1).toLowerCase()}`;
   }
 
   return {

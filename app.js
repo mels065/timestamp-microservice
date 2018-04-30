@@ -27,10 +27,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/:timestamp', (req, res) => {
-  res.json({
-    unix: 'hello',
-    natural: 'world',
-  });
+  res.json(jsonifyDateString(req.params.timestamp));
 });
 
 app.get('*', (req, res) => {
