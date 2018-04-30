@@ -7,12 +7,12 @@ block content
   h1 Timestamp Microservice
 
   div.explanation
-    p Navigate to <span class="code">#{protocol}://#{hostname}#{port ? `:${port}/` : null}/:timestamp</span> where the <span class="code"> :timestamp</span> is a Unix or Natural date
+    p Navigate to <span class="code">#{protocol}://#{hostname}#{port ? `:${port}` : null}/:timestamp</span> where the <span class="code"> :timestamp</span> is a Unix or Natural date
 
     p It will respond with a JSON object like the folowing:
 
     div.code.code-block {<br>&emsp;"natural": Date,<br>&emsp;"unix": Number<br>}
 
-    p For example, if you were to enter <span class="code">#{protocol}://#{hostname}#{port ? `:${port}/` : null}/May 25, 1995</span>, you would get back:
+    p For example, if you were to enter <span class="code">#{protocol}://#{hostname}#{port ? `:${port}` : null}/May 25, 1995</span>, you would get back:
 
     div.code.code-block {<br>&emsp;"natural": "May 25, 1995",<br>&emsp;"unix": "801360000"<br>}
